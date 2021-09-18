@@ -25,7 +25,74 @@
     </dependency>
   </dependencies>
 
+  <profiles>
+    <profile>
+      <id>profile-0</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <profile.value>profileValueDefault</profile.value>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>profile-1</id>
+      <activation>
+        <property>
+          <name>env</name>
+          <value>dev</value>
+        </property>
+      </activation>
+      <properties>
+        <profile.value>profileValueDev</profile.value>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>profile-2</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <profile.value>profileValueDefault2</profile.value>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>profile-3</id>
+      <activation>
+        <jdk>1.8</jdk>
+      </activation>
+      <properties>
+        <profile.value>profileValueJDK</profile.value>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>profile-4</id>
+      <activation>
+        <os>
+          <name>Windows XP</name>
+          <family>Windows</family>
+          <arch>x86</arch>
+          <version>5.1.2600</version>
+        </os>
+      </activation>
+      <properties>
+        <profile.value>profileValueWindowsXP</profile.value>
+      </properties>
+    </profile>
+  </profiles>
+
   <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
