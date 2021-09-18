@@ -72,4 +72,11 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <modules>
+    <!-- name to the module  -->
+    <module>project-a</module>
+    <!-- by specifying the path to the module -->
+    <module>./project-b</module>
+  </modules>
 </project>
